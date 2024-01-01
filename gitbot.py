@@ -1,13 +1,14 @@
 import os
-from random import randint
+from random import randint, random
 import datetime
 
-start_date = datetime.date(2023, 1, 1)
-end_date = datetime.date(2023, 12, 31)
+start_date = datetime.date(2024, 1, 1)
+end_date = datetime.date(2024, 6, 30)
 
 for i in range(int((end_date - start_date).days)):
     date = start_date + datetime.timedelta(days=i)
-    for j in range(10):
+    num_commits = randint(1, 10)
+    for j in range(num_commits):
         d = date.strftime("%A, %B %d, %Y")
         with open('file.txt', 'a') as f:
             f.write(d)
