@@ -6,5 +6,6 @@ for i in range(1,365):
         with open('file.txt', 'a') as f:
             f.write(d)
         os.system('git add .')
-        os.system('git commit --date="'+d+'"-m "commit"')
+        commit_message = f"Added {d} to file.txt"
+        os.system(f'git commit --date="{d}" -m "{commit_message}"')
 os.system('git push origin main')
